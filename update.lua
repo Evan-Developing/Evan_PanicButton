@@ -19,7 +19,7 @@ local function checkVersion(err, responseText, headers)
 
     if version ~= responseText and tonumber(version) < tonumber(responseText) then
         print("^1----------------------------------------------------------------------------------^7")
-        print("[^3"..script.."^7] is outdated, latest version is: ^2"..responseText.."^7, installed version: ^1"..version.."^7!\nupdate from https://github.com/Evan-Developing/Evan_DriveBy/tree/main")
+        print("[^3"..script.."^7] is outdated, latest version is: ^2"..responseText.."^7, installed version: ^1"..version.."^7!\nupdate from https://github.com/Evan-Developing/Evan_PanicButton/tree/main")
         print("^1----------------------------------------------------------------------------------^7")
     elseif tonumber(version) > tonumber(responseText) then
         print("^3----------------------------------------------------------------------------------^7")
@@ -31,5 +31,5 @@ local function checkVersion(err, responseText, headers)
 end
 
 Citizen.CreateThread(function()
-    PerformHttpRequest("https://raw.githubusercontent.com/Evan-Developing/Evan_DriveBy/main/version", checkVersion, "GET")
+    PerformHttpRequest("https://raw.githubusercontent.com/Evan-Developing/Evan_PanicButton/main/version", checkVersion, "GET")
 end)
